@@ -27,6 +27,11 @@ Route::group(['middleware' => 'api','namespace'=>'Api'],function ($router) {
     Route::get('all-salary','SalaryController@allSalary');
     Route::delete('salary/delete/{id}','SalaryController@salaryDelete');
     Route::apiResource('customers','CustomerController');
+
+    Route::apiResource('personas','PersonaController');
+    Route::apiResource('dispositivos','DispositivoController');
+    Route::get('all-dispositivo','DispositivoController@allDispositivos');
+
     //post controller
     Route::get('product/category/{id}','PosController@categoryProducts');
     // cart route
@@ -39,6 +44,14 @@ Route::group(['middleware' => 'api','namespace'=>'Api'],function ($router) {
     Route::get('/cart-subtotal/','CartController@cartSubtotal');
     Route::get('/carts-product-price-total/','CartController@cartsProductPrice');
     Route::post('/order-done/','PosController@orderStore');
+     // carrito route
+     Route::get('add-to-carrito/dispositivo/{id}','CarritoController@addToCarrito');
+     Route::get('dispositivo/carritos','CarritoController@getCarritos');
+     Route::get('/carrito-remove/{id}','CarritoController@carritoRemove');
+     Route::get('/carrito-increment/{id}','CarritoController@carritoIncrement');
+     Route::get('/carrito-decrement/{id}','CarritoController@carritoDecrement');
+     Route::get('/carrito-quantity/','CarritoController@carritoQuantity');
+     Route::post('/prestamo-done/','PoPController@prestamoStore');
     //order route
     Route::get('today-orders','OrderController@todayOrder');
     Route::get('order-info/{id}','OrderController@orderInfo');
@@ -47,6 +60,14 @@ Route::group(['middleware' => 'api','namespace'=>'Api'],function ($router) {
     Route::delete('order-delete/{id}','OrderController@orderDelete');
     Route::post('order-search-date','OrderController@orderDate');
     Route::post('order-search-month','OrderController@orderMonth');
+    //prestamo route
+    Route::get('today-prestamos','PrestamoController@todayPrestamo');
+    Route::get('prestamo-info/{id}','PrestamoController@prestamoInfo');
+    Route::get('prestamo-details/{id}','PrestamoController@prestamoDetails');
+    Route::get('prestamos','PrestamoController@prestamos');
+    Route::delete('prestamo-delete/{id}','PrestamoController@prestamoDelete');
+    Route::post('prestamo-search-date','PrestamoController@prestamoDate');
+    Route::post('prestamo-search-month','PrestamoController@prestamoMonth');
     //home page
     Route::get('today-income','OrderController@todayIncome');
     Route::get('today-sell','OrderController@todaySell');

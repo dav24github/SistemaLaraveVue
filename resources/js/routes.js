@@ -1,4 +1,3 @@
-
 // auth routes
 let login = require('./components/Auth/Login.vue').default;
 let register = require('./components/Auth/Register.vue').default;
@@ -39,61 +38,99 @@ let all_salary = require('./components/Salary/all_salary.vue').default;
 let customerCreate = require('./components/Customer/create.vue').default;
 let customerIndex = require('./components/Customer/index.vue').default;
 let customerEdit = require('./components/Customer/edit.vue').default;
+
+// persona routes
+let personaCreate = require('./components/Persona/create.vue').default;
+let personaIndex = require('./components/Persona/index.vue').default;
+let personaEdit = require('./components/Persona/edit.vue').default;
+
+// dispositivo routes
+let dispositivoCreate = require('./components/Dispositivo/create.vue').default;
+let dispositivoIndex = require('./components/Dispositivo/index.vue').default;
+let dispositivoEdit = require('./components/Dispositivo/edit.vue').default;
+let stockDis = require('./components/Dispositivo/stock.vue').default;
 //point of sell
 let pointofsell = require('./components/pointofsell.vue').default;
 //orders route
 let todayOrder = require('./components/Order/todayOrder').default;
 let orderDetails = require('./components/Order/orderDetails.vue').default;
-let orders = require('./components/Order/orders.vue').default;
-let search = require('./components/Order/search.vue').default;
+let orders = require('./components/Order/Orders.vue').default;
+let searchOrder = require('./components/Order/search.vue').default;
 
+//point of prestamo
+let pointofprestamo = require('./components/pointofprestamo.vue').default;
+//prestamos route
+let todayPrestamo = require('./components/Prestamo/todayPrestamo').default;
+let prestamoDetails = require('./components/Prestamo/prestamoDetails.vue').default;
+let prestamos = require('./components/Prestamo/Prestamos.vue').default;
+let searchPrestamo = require('./components/Prestamo/search.vue').default;
 
-export  const routes = [
-    {path:'/', component: login, name:'login'},
-    {path:'/register', component: register, name:'register'},
-    {path:'/logout', component: logout, name:'logout'},
+export const routes = [
+    { path: '/', component: login, name: 'login' },
+    { path: '/register', component: register, name: 'register' },
+    { path: '/logout', component: logout, name: 'logout' },
 
-    {path:'/home', component: home, name:'home'},
-// employee routes
-    {path:'/add-employee', component: empCreate, name:'empAdd'},
-    {path:'/employees', component: empIndex, name:'empIndex'},
-    {path:'/employees-edit/:id', component: empEdit, name:'empEdit'},
-// category routes
-    {path:'/add-category', component: categoryCreate, name:'categoryCreate'},
-    {path:'/categories', component: categoryIndex, name:'categoryIndex'},
-    {path:'/category-edit/:id', component: categoryEdit, name:'categoryEdit'},
+    { path: '/home', component: home, name: 'home' },
+    // employee routes
+    { path: '/add-employee', component: empCreate, name: 'empAdd' },
+    { path: '/employees', component: empIndex, name: 'empIndex' },
+    { path: '/employees-edit/:id', component: empEdit, name: 'empEdit' },
+    // category routes
+    { path: '/add-category', component: categoryCreate, name: 'categoryCreate' },
+    { path: '/categories', component: categoryIndex, name: 'categoryIndex' },
+    { path: '/category-edit/:id', component: categoryEdit, name: 'categoryEdit' },
 
     // supplier routes
-    {path:'/add-supplier', component: supCreate, name:'supAdd'},
-    {path:'/suppliers', component: supIndex, name:'supIndex'},
-    {path:'/supplier-edit/:id', component: supEdit, name:'supEdit'},
+    { path: '/add-supplier', component: supCreate, name: 'supAdd' },
+    { path: '/suppliers', component: supIndex, name: 'supIndex' },
+    { path: '/supplier-edit/:id', component: supEdit, name: 'supEdit' },
     // product routes
-    {path:'/add-product', component: productCreate, name:'productCreate'},
-    {path:'/products', component: productIndex, name:'productIndex'},
-    {path:'/product-edit/:id', component: productEdit, name:'productEdit'},
-    {path:'/stocks', component: stock, name:'stock'},
-     // expense routes
-    {path:'/add-expense', component: expenseCreate, name:'expenseCreate'},
-    {path:'/expenses', component: expenseIndex, name:'expenseIndex'},
-    {path:'/expense-edit/:id', component: expenseEdit, name:'expenseEdit'},
-     // salary routes
-    {path:'/add-salary/:id', component: salaryCreate, name:'salaryCreate'},
-    {path:'/salaries/:month', component: salaryIndex, name:'salaryIndex'},
-    {path:'/salary-edit/:id', component: salaryEdit, name:'salaryEdit'},
-    {path:'/salary-employees', component: salary_employees, name:'salaryEmp'},
-    {path:'/salary-months', component: salary_month_list, name:'salaryMonths'},
-    {path:'/salary-lists', component: all_salary, name:'all_salary'},
+    { path: '/add-product', component: productCreate, name: 'productCreate' },
+    { path: '/products', component: productIndex, name: 'productIndex' },
+    { path: '/product-edit/:id', component: productEdit, name: 'productEdit' },
+    { path: '/stocks', component: stock, name: 'stock' },
+    // expense routes
+    { path: '/add-expense', component: expenseCreate, name: 'expenseCreate' },
+    { path: '/expenses', component: expenseIndex, name: 'expenseIndex' },
+    { path: '/expense-edit/:id', component: expenseEdit, name: 'expenseEdit' },
+    // salary routes
+    { path: '/add-salary/:id', component: salaryCreate, name: 'salaryCreate' },
+    { path: '/salaries/:month', component: salaryIndex, name: 'salaryIndex' },
+    { path: '/salary-edit/:id', component: salaryEdit, name: 'salaryEdit' },
+    { path: '/salary-employees', component: salary_employees, name: 'salaryEmp' },
+    { path: '/salary-months', component: salary_month_list, name: 'salaryMonths' },
+    { path: '/salary-lists', component: all_salary, name: 'all_salary' },
 
-     // customer routes
-    {path:'/add-customer', component: customerCreate, name:'customerCreate'},
-    {path:'/customers', component: customerIndex, name:'customerIndex'},
-    {path:'/customer-edit/:id', component: customerEdit, name:'customerEdit'},
+    // customer routes
+    { path: '/add-customer', component: customerCreate, name: 'customerCreate' },
+    { path: '/customers', component: customerIndex, name: 'customerIndex' },
+    { path: '/customer-edit/:id', component: customerEdit, name: 'customerEdit' },
+
+    // persona routes
+    { path: '/add-persona', component: personaCreate, name: 'personaCreate' },
+    { path: '/personas', component: personaIndex, name: 'personaIndex' },
+    { path: '/persona-edit/:id', component: personaEdit, name: 'personaEdit' },
+
+    // dispositivo routes
+    { path: '/add-dispositivo', component: dispositivoCreate, name: 'dispositivoCreate' },
+    { path: '/dispositivos', component: dispositivoIndex, name: 'dispositivoIndex' },
+    { path: '/dispositivo-edit/:id', component: dispositivoEdit, name: 'dispositivoEdit' },
+    { path: '/stocksDis', component: stockDis, name: 'stockDis' },
+
     //point of sell
-    {path:'/pos', component: pointofsell, name:'pointofsell'},
+    { path: '/pos', component: pointofsell, name: 'pointofsell' },
     //order
-    {path:'/today-orders',component:todayOrder,name:'todayOrder'},
-    {path:'/order-details/:id',component:orderDetails,name:'orderDetails'},
-    {path:'/orders',component:orders,name:'orders'},
-    {path:'/order-search',component:search,name:'search'},
+    { path: '/today-orders', component: todayOrder, name: 'todayOrder' },
+    { path: '/order-details/:id', component: orderDetails, name: 'orderDetails' },
+    { path: '/orders', component: orders, name: 'orders' },
+    { path: '/order-search', component: searchOrder, name: 'search' },
+
+    //point of prestamo
+    { path: '/pop', component: pointofprestamo, name: 'pointofprestamo' },
+    //prestamo
+    { path: '/today-prestamos', component: todayPrestamo, name: 'todayPrestamo' },
+    { path: '/prestamo-details/:id', component: prestamoDetails, name: 'prestamoDetails' },
+    { path: '/prestamos', component: prestamos, name: 'prestamos' },
+    { path: '/prestamo-search', component: searchPrestamo, name: 'searchPre' },
 
 ];

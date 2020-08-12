@@ -70,9 +70,41 @@
                     </li>
 
                     <li class="hover" style="background-color:#83bceb">
-                        <router-link :to="{name: 'pointofsell'}" class="nav-link text-white"><i data-feather="monitor"></i><span>POS</span></router-link>
+                        <router-link :to="{name: 'pointofprestamo'}" class="nav-link text-white"><i data-feather="monitor"></i><span>POPrestamo</span></router-link>
                     </li>
 
+                    <li class="hover" style="background-color:#83bceb">
+                        <router-link :to="{name: 'pointofsell'}" class="nav-link text-white"><i data-feather="monitor"></i><span>POS</span></router-link>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Prestamos</span></a>
+                        <ul class="dropdown-menu">
+                            <li><router-link class="nav-link" :to="{name: 'todayPrestamo'}">Today Prestamo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'prestamos'}">Prestamos</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'searchPre'}">Search</router-link></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Personas</span></a>
+                        <ul class="dropdown-menu">
+                            <li><router-link class="nav-link" :to="{name: 'personaCreate'}">Add Persona</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'personaIndex'}">All Persona</router-link></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="briefcase"></i><span>Dispositivos</span></a>
+                        <ul class="dropdown-menu">
+                            <li><router-link class="nav-link" :to="{name: 'dispositivoCreate'}">Add Dispositivo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'dispositivoIndex'}">All Dispositivo</router-link></li>
+                        </ul>
+                    </li>
+                    
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Orders</span></a>
@@ -82,6 +114,7 @@
                             <li><router-link class="nav-link" :to="{name:'search'}">Search</router-link></li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Employee</span></a>
@@ -118,6 +151,12 @@
                             <li><router-link class="nav-link" :to="{name:'productIndex'}">All Product</router-link></li>
                         </ul>
                     </li>
+                    
+                    <li class="dropdown">
+                        <router-link :to="{name:'stockDis'}"><i
+                                data-feather="briefcase"></i><span>Stock Disp.</span></router-link>
+
+                    </li>
 
                    <li class="dropdown">
                         <router-link :to="{name:'stock'}"><i
@@ -126,7 +165,7 @@
                     </li>
 
 
-                      <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Expenses</span></a>
                         <ul class="dropdown-menu">
@@ -153,10 +192,8 @@
                             <li><router-link class="nav-link" :to="{name: 'customerCreate'}">Add Customer</router-link></li>
                             <li><router-link class="nav-link" :to="{name:'customerIndex'}">All Customer</router-link></li>
                         </ul>
-                    </li>
-
-
-
+                    </li>                   
+                    
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-cogs"></i><span>Settings</span></a>
                         <ul class="dropdown-menu">
